@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #6666ff;
+      color: #fff;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .main {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .content {
+      flex: 3;
+      background: #fff;
+      padding: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: #99ffcc;
+      padding: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      flex: 1 1 calc(33.333% - 20px);
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 30px;
+      background: #6666ff;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .cards {
+        flex-direction: column;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 5px 0 0 0;
+        display: block;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Магазин</h1>
+    <nav>
+      <a href="#">Головна</a>
+      <a href="#">Послуги</a>
+      <a href="#">Контакти</a>
+    </nav>
+  </header>
+  <div class="main">
+    <div class="content">
+      <h2>Оберіть товар</h2>
+      <p>На свій смак</p>
+    </div>
+    <div class="sidebar">
+      <h3>ККА</h3>
+      <p>Завжди поряд з вами.</p>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="card">Товар 1</div>
+    <div class="card">Товар 2</div>
+    <div class="card">Товар 3</div>
+  </div>
+  <footer>
+    <div class="footer-column">Про нас</div>
+    <div class="footer-column">Послуги</div>
+    <div class="footer-column">Контакти</div>
+  </footer>
+
+</body>
+</html>
